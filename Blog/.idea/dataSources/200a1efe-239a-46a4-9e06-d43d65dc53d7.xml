@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.2">
+    <root id="1"/>
+    <schema id="2" parent="1" name="db_blog3">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="itweet"/>
+    <schema id="5" parent="1" name="mysql"/>
+    <schema id="6" parent="1" name="performance_schema"/>
+    <schema id="7" parent="1" name="solo"/>
+    <schema id="8" parent="1" name="test"/>
+    <schema id="9" parent="1" name="zspig"/>
+    <table id="10" parent="2" name="t_blog"/>
+    <table id="11" parent="2" name="t_blogger"/>
+    <table id="12" parent="2" name="t_blogtype"/>
+    <table id="13" parent="2" name="t_comment"/>
+    <table id="14" parent="2" name="t_link"/>
+    <column id="15" parent="10" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="16" parent="10" name="title">
+      <Position>2</Position>
+      <DataType>varchar(200)|0</DataType>
+    </column>
+    <column id="17" parent="10" name="summary">
+      <Position>3</Position>
+      <DataType>varchar(400)|0</DataType>
+    </column>
+    <column id="18" parent="10" name="releaseDate">
+      <Position>4</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="19" parent="10" name="clickHit">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="20" parent="10" name="replyHit">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="21" parent="10" name="content">
+      <Position>7</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="22" parent="10" name="typeId">
+      <Position>8</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="23" parent="10" name="keyWord">
+      <Position>9</Position>
+      <DataType>varchar(200)|0</DataType>
+    </column>
+    <index id="24" parent="10" name="typeId">
+      <ColNames>typeId</ColNames>
+    </index>
+    <key id="25" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="26" parent="10" name="t_blog_ibfk_1">
+      <ColNames>typeId</ColNames>
+      <RefSchemaName>db_blog3</RefSchemaName>
+      <RefTableName>t_blogtype</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="27" parent="11" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="28" parent="11" name="userName">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="29" parent="11" name="password">
+      <Position>3</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="30" parent="11" name="profile">
+      <Position>4</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="31" parent="11" name="nickName">
+      <Position>5</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="32" parent="11" name="sign">
+      <Position>6</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="33" parent="11" name="imageName">
+      <Position>7</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <key id="34" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="35" parent="12" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="36" parent="12" name="typeName">
+      <Position>2</Position>
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <column id="37" parent="12" name="orderNo">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <key id="38" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="39" parent="13" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="40" parent="13" name="userIp">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="41" parent="13" name="blogId">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="42" parent="13" name="content">
+      <Position>4</Position>
+      <DataType>varchar(1000)|0</DataType>
+    </column>
+    <column id="43" parent="13" name="commentDate">
+      <Position>5</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="44" parent="13" name="state">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <key id="45" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="46" parent="14" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="47" parent="14" name="linkName">
+      <Position>2</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="48" parent="14" name="linkUrl">
+      <Position>3</Position>
+      <DataType>varchar(200)|0</DataType>
+    </column>
+    <column id="49" parent="14" name="orderNo">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <key id="50" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
